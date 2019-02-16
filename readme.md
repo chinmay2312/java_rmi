@@ -2,9 +2,13 @@
 
 In command line, run the following commands in order:
 
- `cd src/main/java; start rmiregistry; cd ../../../`
+ `cd src/main/java`
+ 
+  `start rmiregistry`
+  
+  `cd ../../../`
 
- `sbt "runMain cg_srever/ServerOp"`
+  `sbt "runMain cg_srever.ServerOp"`
 
 This command line will now print output for the server
 

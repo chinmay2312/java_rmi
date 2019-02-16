@@ -13,6 +13,6 @@ public class RMIInterfaceImpl implements RMIInterface {
 
     @Override
     public void passObj(SampleClass sc1, SampleClass sc2) throws RemoteException {
-        System.out.println("Both objects are same: "+sc1.equals(sc2));
+        System.out.println("Both objects have same reference: "+(sc1==sc2));
     }
 }

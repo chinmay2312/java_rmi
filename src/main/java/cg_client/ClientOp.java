@@ -34,13 +34,13 @@ public class ClientOp {
             SampleClass sc1 = new SampleClass(3);
             SampleClass sc2 = sc1;
             SampleClass sc3 = new SampleClass(5);
-            System.out.println("ClientOp: sc1==sc2 is "+sc1.equals(sc2));
+            System.out.println("ClientOp: sc1==sc2 is "+(sc1==sc2));
             stub.passObj(sc1, sc2);
-            System.out.println("ClientOp: sc1==sc3 is "+sc1.equals(sc3));
+            /*System.out.println("ClientOp: sc1==sc3 is "+(sc1==sc3));
             stub.passObj(sc1, sc3);
             sc3.setVar(3);
             System.out.println("ClientOp: sc1==sc3 after changing sc3 is "+sc1.equals(sc3));
-            stub.passObj(sc1, sc3);
+            stub.passObj(sc1, sc3);*/
 
         } catch (Exception e)   {
             System.err.println("Client exception: " + e.toString());
