@@ -4,20 +4,15 @@ package cg_client;
 import Sample.SampleClass;
 import cg_interface.RMIInterface;
 
-import javax.swing.JOptionPane;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 public class ClientOp {
-    private static RMIInterface lookUp;
+    //private static RMIInterface lookUp;
 
     private ClientOp()  {}
 
-    public static void main(String[] args) throws RemoteException, NotBoundException, MalformedURLException {
+    public static void main(String[] args) {
         /*lookUp = (RMIInterface) Naming.lookup("//localhost/CGServer");
         String heyServer = JOptionPane.showInputDialog("Hello ServerOp");
 
@@ -34,7 +29,7 @@ public class ClientOp {
 
             SampleClass sc1 = new SampleClass(3);
             SampleClass sc2 = sc1;
-            SampleClass sc3 = new SampleClass(5);
+            //SampleClass sc3 = new SampleClass(5);
             System.out.println("ClientOp: sc1==sc2 is "+(sc1==sc2));
             Boolean serverResult = stub.passObj(sc1, sc2);
             System.out.println("ServerOp: sc1==sc2 is "+serverResult);
