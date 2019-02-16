@@ -26,6 +26,7 @@ public class ClientOp {
         */
 
         try {
+            //No need to pass port number as parameter, since 1099 is the default port
             Registry registry = LocateRegistry.getRegistry(null);
 
             RMIInterface stub = (RMIInterface) registry.lookup("RMIInterface");
@@ -35,9 +36,10 @@ public class ClientOp {
             SampleClass sc2 = sc1;
             SampleClass sc3 = new SampleClass(5);
             System.out.println("ClientOp: sc1==sc2 is "+(sc1==sc2));
-            stub.passObj(sc1, sc2);
-            /*System.out.println("ClientOp: sc1==sc3 is "+(sc1==sc3));
-            stub.passObj(sc1, sc3);
+            Boolean serverResult = stub.passObj(sc1, sc2);
+            System.out.println("ServerOp: sc1==sc2 is "+serverResult);
+
+            /*stub.passObj(sc1, sc3);
             sc3.setVar(3);
             System.out.println("ClientOp: sc1==sc3 after changing sc3 is "+sc1.equals(sc3));
             stub.passObj(sc1, sc3);*/
