@@ -12,7 +12,6 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 public class ServerOp extends RMIInterfaceImpl {
-    private static final long serialVersionUID = 1L;
     public ServerOp() {
         super();
     }
