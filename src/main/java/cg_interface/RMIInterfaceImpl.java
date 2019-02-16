@@ -2,17 +2,15 @@ package cg_interface;
 
 import Sample.SampleClass;
 
-import java.rmi.RemoteException;
-
 public class RMIInterfaceImpl implements RMIInterface {
     @Override
-    public void sayHello(String otherPerson) throws RemoteException {
+    public void sayHello(String otherPerson) {
         System.out.println("Hello to "+otherPerson);
 
     }
 
     @Override
-    public void passObj(SampleClass sc1, SampleClass sc2) throws RemoteException {
+    public void passObj(SampleClass sc1, SampleClass sc2) {
         System.out.println("Both objects have same reference: "+(sc1==sc2));
     }
 }
