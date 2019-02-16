@@ -1,6 +1,7 @@
 
 
 import cg_interface.RMIInterface;
+import junit.framework.Assert;
 import org.junit.Test;
 
 import java.rmi.Remote;
@@ -13,15 +14,21 @@ import static junit.framework.TestCase.*;
 public class BasicTests {
 
     @Test
-    public static void canConnectServerRegistry()   {
+    public void canConnectServerRegistry()   {
+        boolean saidHello = false;
+        String serverHello="";
         try {
             Registry registry = LocateRegistry.getRegistry(null);
 
             RMIInterface stub = (RMIInterface) registry.lookup("RMIInterface");
-            String serverHello = stub.sayHello("CGServer from CGClient");
+            serverHello = stub.sayHello("CGServer from CGClient");
+            saidHello = true;
             assertTrue(serverHello.equalsIgnoreCase("Hello"));
         } catch (Exception e)    {
-
+            if(saidHello)
+                fail("Returned "+serverHello+" instead of \"Hello\"");
+            else
+                fail("Could not register");
         }
     }
 }
